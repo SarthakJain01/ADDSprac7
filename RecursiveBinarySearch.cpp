@@ -23,31 +23,27 @@ void RecursiveBinarySearch::sorthelper(vector<int> list)
 bool RecursiveBinarySearch::searchhelper(vector<int> list, int low, int high, int value)
 {
     int mid;
-    if((high+low)%2 == 0)
-    {
-        mid=(high + low)/2;
-    }
-    else
-    {
-        mid = (high+low +1)/2;
-    }
-        if(low<=high)
+if(low<=high){
+
+    mid = ((high+low)/2);
+        if (list[mid] == value)
         {
-                if (list[mid] == value)
-                {
-                return true;
-                }
-                else if (list[mid] >value)
-                    return searchhelper(list,low,mid -1, value);
-                else
-                    return searchhelper(list,high,mid + 1, value);
+        return true;
         }
-    else
-    return false;
+        else if (list[mid] >value)
+            return searchhelper(list,low,mid -1, value);
+        else
+            return searchhelper(list,mid+1,high, value);
+}
+else{
+return false;
+}
+
+
 };
 bool RecursiveBinarySearch::search(vector<int> list,int number)
 {
 sorthelper(list);
-return searchhelper(list,0,list.size()-1,number);
+return searchhelper(list,0,list.size(),number);
 
 };
