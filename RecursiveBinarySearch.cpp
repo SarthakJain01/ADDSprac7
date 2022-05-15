@@ -29,7 +29,7 @@ bool RecursiveBinarySearch::searchhelper(vector<int> list, int low, int high, in
     }
     else
     {
-        mid = (high+low -1)/2;
+        mid = (high+low +1)/2;
     }
         if(low<=high)
         {
