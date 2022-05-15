@@ -10,20 +10,33 @@ int main()
 {
 
 vector<int>Array1({1,3,5,4,-5,100,7777,2014});
+vector<int>Array2({0,3,5,4,-5,100,7777,2014});
 BubbleSort Method;
 QuickSort Method2;
 RecursiveBinarySearch Method3;
 vector<int>result1 = Array1;
 bool result2 = 0;
-vector<int>result3 = Array1;
+bool result4 = 0;
+vector<int>result3 = Array2;
+
+result2 = Method3.search(Array1,1);
+if(result2 == 1)
+{
+cout<<"true ";
+}
+else
+{
+cout<<"false ";
+}
+
 result1 = Method.sort(result1);
 for(int x = 0;x<result1.size();x++){
     cout<<result1.at(x)<<" ";
 };
 cout<<""<<endl;
 
-result2 = Method3.search(Array1,2);
-if(result2 == 1)
+result4 = Method3.search(Array2,1);
+if(result4 == 1)
 {
 cout<<"true ";
 }
